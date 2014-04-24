@@ -1,8 +1,5 @@
 flying-armbar
-
 =============
-
-
 
 A course planning application using grails.
 

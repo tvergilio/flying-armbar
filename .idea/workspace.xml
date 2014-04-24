@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c1161c4-d446-4e2a-a7f5-0b71ea376c46" name="Default" comment="added">
+      <change type="DELETED" beforePath="D:\myApps\ClassPlanner\ClassPlanner\pom.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BootStrap.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClassPlanner-grailsPlugins.iml" afterPath="$PROJECT_DIR$/ClassPlanner-grailsPlugins.iml" />
@@ -704,7 +705,7 @@
       <workItem from="1397402247727" duration="15893000" />
       <workItem from="1398340651174" duration="55000" />
       <workItem from="1398348499684" duration="892000" />
-      <workItem from="1398361493344" duration="10352000" />
+      <workItem from="1398361493344" duration="10405000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1397403634911</created>
@@ -722,7 +723,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27520000" />
+    <option name="totallyTimeSpent" value="27573000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
