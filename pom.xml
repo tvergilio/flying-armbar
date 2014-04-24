@@ -58,12 +58,6 @@
             <artifactId>grails-plugin-gsp</artifactId>
             <version>${grails.version}</version>
         </dependency>
-		
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>6.1.26</version>
-		</dependency>
 
         <dependency>
             <groupId>org.grails</groupId>
@@ -226,11 +220,6 @@
                 </configuration>
                 <extensions>true</extensions>
             </plugin>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>6.1.26</version>
-			</plugin>
         </plugins>
     </build>
 
