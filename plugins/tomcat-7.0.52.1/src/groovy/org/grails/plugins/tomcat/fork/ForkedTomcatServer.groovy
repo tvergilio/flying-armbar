@@ -142,7 +142,7 @@ class ForkedTomcatServer extends ForkedGrailsProcess implements EmbeddableServer
             sleep 100
         }
         try {
-            new URL("http://${host ?: 'localhost'}:${port ?: 5000}/is-tomcat-running").text
+            new URL("http://${host ?: 'localhost'}:${port ?: 8080}/is-tomcat-running").text
         } catch(e) {
             // ignore
         }
@@ -161,7 +161,7 @@ class ForkedTomcatServer extends ForkedGrailsProcess implements EmbeddableServer
     void stop() {
         final ec = (TomcatExecutionContext)executionContext
         try {
-            new URL("http://${ec?.host ?: 'localhost'}:${(ec?.port ?: 5000 )  + 1}").text
+            new URL("http://${ec?.host ?: 'localhost'}:${(ec?.port ?: 8080 )  + 1}").text
         } catch(e) {
             // ignore
         }

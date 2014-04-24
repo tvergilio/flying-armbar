@@ -21,7 +21,7 @@ grails tomcat undeploy - Undeploy from a tomcat server
     argsMap.params.clear()
     String user = config.tomcat.deploy.username ?: 'manager'
     String pass = config.tomcat.deploy.password ?: 'secret'
-    String url = config.tomcat.deploy.url ?: 'http://localhost:5000/manager'
+    String url = config.tomcat.deploy.url ?: 'http://localhost:8080/manager'
 
     switch (cmd) {
         case 'deploy':

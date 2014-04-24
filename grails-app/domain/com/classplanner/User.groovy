@@ -1,6 +1,10 @@
 package com.classplanner
 
+
 class User {
+    static mapping = {
+        table '`user`' // or 'users'
+    }
     String fullName
     String userName
     String password
