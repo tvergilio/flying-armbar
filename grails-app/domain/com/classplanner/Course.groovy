@@ -10,7 +10,7 @@ class Course {
 
     static constraints = {
         startDate()
-        subject()
+        subject unique: true
         description maxSize: 5000
         teacher()
         location()

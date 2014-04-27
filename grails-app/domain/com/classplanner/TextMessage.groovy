@@ -17,4 +17,8 @@ class TextMessage {
         author nullable: false
     }
     static belongsTo = Course
+
+    String toString() {
+        "$subject, $author"
+    }
 }

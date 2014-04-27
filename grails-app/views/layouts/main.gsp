@@ -19,7 +19,7 @@
 		<r:layoutResources />
 	</head>
 	<body>
-		<div id="logo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'courseplanner.jpg')}" alt="Course Planner"/></a></div>
+		<div id="logo" role="banner"><a href="${createLink(uri: '/')}"><img src="${resource(dir: 'images', file: 'courseplanner.png')}" alt="Course Planner"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>

@@ -17,7 +17,7 @@
 			</ul>
 		</div>
 		<div id="show-course" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1>${courseInstance.subject}</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
@@ -27,20 +27,11 @@
 				<li class="fieldcontain">
 					<span id="startDate-label" class="property-label"><g:message code="course.startDate.label" default="Start Date" /></span>
 					
-						<span class="property-value" aria-labelledby="startDate-label"><g:formatDate date="${courseInstance?.startDate}" /></span>
+						<span class="property-value" aria-labelledby="startDate-label"><g:formatDate format='dd MMMM yyyy' date="${courseInstance?.startDate}" /></span>
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${courseInstance?.subject}">
-				<li class="fieldcontain">
-					<span id="subject-label" class="property-label"><g:message code="course.subject.label" default="Subject" /></span>
-					
-						<span class="property-value" aria-labelledby="subject-label"><g:fieldValue bean="${courseInstance}" field="subject"/></span>
-					
-				</li>
-				</g:if>
-			
+
 				<g:if test="${courseInstance?.description}">
 				<li class="fieldcontain">
 					<span id="description-label" class="property-label"><g:message code="course.description.label" default="Description" /></span>
@@ -73,33 +64,22 @@
 					<span id="sponsorships-label" class="property-label"><g:message code="course.sponsorships.label" default="Sponsorships" /></span>
 					
 						<g:each in="${courseInstance.sponsorships}" var="s">
-						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.sponsor.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${courseInstance?.tasks}">
-				<li class="fieldcontain">
-					<span id="tasks-label" class="property-label"><g:message code="course.tasks.label" default="Tasks" /></span>
-					
-						<g:each in="${courseInstance.tasks}" var="t">
-						<span class="property-value" aria-labelledby="tasks-label"><g:link controller="task" action="show" id="${t.id}">${t?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${courseInstance?.messages}">
-				<li class="fieldcontain">
-					<span id="messages-label" class="property-label"><g:message code="course.messages.label" default="Messages" /></span>
-					
-						<g:each in="${courseInstance.messages}" var="m">
-						<span class="property-value" aria-labelledby="messages-label"><g:link controller="textMessage" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
+
+				%{--<g:if test="${courseInstance?.messages}">--}%
+				%{--<li class="fieldcontain">--}%
+					%{--<span id="messages-label" class="property-label"><g:message code="course.messages.label" default="Messages" /></span>--}%
+					%{----}%
+						%{--<g:each in="${courseInstance.messages}" var="m">--}%
+						%{--<span class="property-value" aria-labelledby="messages-label"><g:link controller="textMessage" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>--}%
+						%{--</g:each>--}%
+					%{----}%
+				%{--</li>--}%
+				%{--</g:if>--}%
 			
 				<g:if test="${courseInstance?.respondents}">
 				<li class="fieldcontain">
@@ -109,6 +89,30 @@
 					
 				</li>
 				</g:if>
+
+                <g:if test="${courseInstance?.tasks}">
+                    <li class="fieldcontain">
+                        <span id="tasks-label" class="property-label"><g:message
+                                code="courseEvent.tasks.label" default="Tasks" /></span>
+                        <g:each in="${courseInstance.tasks}" var="t">
+                            <span class="property-value" aria-labelledby="tasks-label">
+                                <g:link controller="task" action="show"
+                                        id="${t.id}">${t.title}</g:link></span>
+                        </g:each>
+                    </li>
+                </g:if>
+
+                <g:if test="${courseInstance?.messages}">
+                    <li class="fieldcontain">
+                        <span id="messages-label" class="property-label"><g:message
+                                code="course.messages.label" default="Messages" /></span>
+                        <span class="property-value" aria-labelledby="messages-label">
+                            <g:link controller="textMessage" action="index"
+                                    id="${courseInstance.id}">
+                                View Messages
+                            </g:link></span>
+                    </li>
+                </g:if>
 			
 				<g:if test="${courseInstance?.students}">
 				<li class="fieldcontain">

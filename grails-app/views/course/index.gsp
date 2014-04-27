@@ -23,33 +23,33 @@
 			<table>
 			<thead>
 					<tr>
-					
+
 						<g:sortableColumn property="startDate" title="${message(code: 'course.startDate.label', default: 'Start Date')}" />
-					
+
 						<g:sortableColumn property="subject" title="${message(code: 'course.subject.label', default: 'Subject')}" />
-					
+
 						<g:sortableColumn property="description" title="${message(code: 'course.description.label', default: 'Description')}" />
-					
+
 						<th><g:message code="course.teacher.label" default="Teacher" /></th>
-					
+
 						<g:sortableColumn property="location" title="${message(code: 'course.location.label', default: 'Location')}" />
-					
+
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${courseInstanceList}" status="i" var="courseInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${courseInstance.id}">${fieldValue(bean: courseInstance, field: "startDate")}</g:link></td>
-					
+
+						<td><g:link action="show" id="${courseInstance.id}">${courseInstance.startDate.format('dd MMM yyyy')}</g:link></td>
+
 						<td>${fieldValue(bean: courseInstance, field: "subject")}</td>
-					
+
 						<td>${fieldValue(bean: courseInstance, field: "description")}</td>
-					
+
 						<td>${fieldValue(bean: courseInstance, field: "teacher")}</td>
-					
+
 						<td>${fieldValue(bean: courseInstance, field: "location")}</td>
-					
+
 					</tr>
 				</g:each>
 				</tbody>

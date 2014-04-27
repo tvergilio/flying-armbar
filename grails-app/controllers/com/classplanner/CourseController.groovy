@@ -7,7 +7,7 @@ import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class CourseController {
-
+    def taskService
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -36,6 +36,7 @@ class CourseController {
         }
 
         courseInstance.save flush:true
+        taskService.addDefaultTasks(courseInstance)
 
         request.withFormat {
             form multipartForm {

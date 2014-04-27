@@ -62,7 +62,7 @@
 					<span id="sponsorships-label" class="property-label"><g:message code="sponsor.sponsorships.label" default="Sponsorships" /></span>
 					
 						<g:each in="${sponsorInstance.sponsorships}" var="s">
-						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="sponsorships-label"><g:link controller="sponsorship" action="show" id="${s.id}">${s?.course.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>

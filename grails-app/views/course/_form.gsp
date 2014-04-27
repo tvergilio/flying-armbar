@@ -7,7 +7,7 @@
 		<g:message code="course.startDate.label" default="Start Date" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="startDate" precision="day"  value="${courseInstance?.startDate}"  />
+	<g:datePicker name="startDate" precision="day"  value="${courseInstance?.startDate}" years="${2014..2023}"  />
 
 </div>
 
@@ -94,7 +94,7 @@
     <li><g:link controller="textMessage" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="textMessage" action="create" params="['course.id': courseInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'textMessage.label', default: 'TextMessage')])}</g:link>
+<g:link controller="textMessage" action="create" params="['course.id': courseInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'textMessage.label', default: 'Text Message')])}</g:link>
 </li>
 </ul>
 

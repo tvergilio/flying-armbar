@@ -1,9 +1,8 @@
 package com.classplanner
 
-
+import grails.transaction.Transactional
 
 import static org.springframework.http.HttpStatus.*
-import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class TextMessageController {
@@ -12,11 +11,34 @@ class TextMessageController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond TextMessage.list(params), model:[textMessageInstanceCount: TextMessage.count()]
+        def list
+        def count
+        def course = Course.get(params.id)
+        if (course) {
+            list = TextMessage.findAllByCourse(course, params)
+            count = TextMessage.countByCourse(course)
+        } else {
+            list = TextMessage.list(params)
+            count = TextMessage.count()
+        }
+        render view: 'ajaxIndex', model: [textMessageInstanceList : list,
+                                          textMessageInstanceCount: count,
+                                          course                  : course]
     }
 
     def show(TextMessage textMessageInstance) {
         respond textMessageInstance
+    }
+
+    def reply = {
+        def parent = TextMessage.get(params.get('id'))
+        def textMessageInstance
+        if (parent != null) {
+            textMessageInstance = new TextMessage(parent: parent, course: parent.course,
+                    subject: "RE: $parent.subject").save()
+
+            render view: 'create', model: ['textMessageInstance': textMessageInstance]
+        }
     }
 
     def create() {
@@ -31,11 +53,11 @@ class TextMessageController {
         }
 
         if (textMessageInstance.hasErrors()) {
-            respond textMessageInstance.errors, view:'create'
+            respond textMessageInstance.errors, view: 'create'
             return
         }
 
-        textMessageInstance.save flush:true
+        textMessageInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
@@ -58,18 +80,18 @@ class TextMessageController {
         }
 
         if (textMessageInstance.hasErrors()) {
-            respond textMessageInstance.errors, view:'edit'
+            respond textMessageInstance.errors, view: 'edit'
             return
         }
 
-        textMessageInstance.save flush:true
+        textMessageInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'TextMessage.label', default: 'TextMessage'), textMessageInstance.id])
                 redirect textMessageInstance
             }
-            '*'{ respond textMessageInstance, [status: OK] }
+            '*' { respond textMessageInstance, [status: OK] }
         }
     }
 
@@ -81,14 +103,14 @@ class TextMessageController {
             return
         }
 
-        textMessageInstance.delete flush:true
+        textMessageInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'TextMessage.label', default: 'TextMessage'), textMessageInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -98,7 +120,16 @@ class TextMessageController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'textMessageInstance.label', default: 'TextMessage'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
+        }
+    }
+
+    def showDetail() {
+        def textMessageInstance = TextMessage.get(params.id)
+        if (textMessageInstance) {
+            render(template: "details", model: [textMessageInstance: textMessageInstance])
+        } else {
+            render "No message found with id: ${params.id}"
         }
     }
 }
