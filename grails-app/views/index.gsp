@@ -107,10 +107,12 @@
 			<p>This is a course planning application which will help you organise academic courses and keep track of lecturers and Student enrollment.</p>
 
 			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+				<h2>Navigate to:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.getPropertyValue('linkName') } }">
+                        <g:if test="${c.getPropertyValue('linkName') != null}">
+                            <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.getPropertyValue('linkName')}</g:link></li>
+                        </g:if>
 					</g:each>
 				</ul>
 			</div>

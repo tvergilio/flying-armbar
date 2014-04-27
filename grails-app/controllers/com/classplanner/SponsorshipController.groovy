@@ -9,6 +9,7 @@ import grails.transaction.Transactional
 class SponsorshipController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    String linkName = "Sponsorship"
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

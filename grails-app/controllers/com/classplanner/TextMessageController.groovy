@@ -8,6 +8,7 @@ import static org.springframework.http.HttpStatus.*
 class TextMessageController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    String linkName = "Text Messages"
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)

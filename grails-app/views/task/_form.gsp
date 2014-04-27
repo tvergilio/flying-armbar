@@ -34,7 +34,7 @@
 		<g:message code="task.dueDate.label" default="Due Date" />
 		
 	</label>
-	<g:datePicker name="dueDate" precision="day"  value="${taskInstance?.dueDate}" default="none" noSelection="['': '']" />
+	<g:datePicker name="dueDate" precision="day"  value="${taskInstance?.dueDate}" years="${2014..2023}" default="none" noSelection="['': '']" />
 
 </div>
 
