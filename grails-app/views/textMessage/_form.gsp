@@ -30,6 +30,16 @@
 </div>
 
 %{--<g:hiddenField name="course.id" value="${textMessageInstance?.course.id}"/>--}%
+<g:if test="${!params.id && !textMessageInstance?.parent?.id}">
+<div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'course', 'error')} required">
+<label for="course">
+    <g:message code="textMessage.course.label" default="Course"/>
+    <span class="required-indicator">*</span>
+</label>
+<g:select id="course" name="course.id" from="${com.classplanner.Course.list()}" optionKey="id" required=""
+          value="${textMessageInstance?.course?.id}" class="many-to-one"/>
+</div>
+</g:if>
 
 <div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'author', 'error')} required">
     <label for="author">
@@ -41,10 +51,11 @@
 
 </div>
 
+<g:if test="${params.id && textMessageInstance?.parent?.id}">
 <g:hiddenField name="course_id" value="${params.course_id}"/>
 %{--<g:if test="${textMessageInstance?.course?.id}">--}%
     %{--<g:hiddenField name="course_id" value="${textMessageInstance?.course?.id}"/>--}%
 %{--</g:if>--}%
 <g:hiddenField name="parent" value="${textMessageInstance?.parent?.id}"/>
 <g:hiddenField name="course" value="${textMessageInstance?.parent?.course?.id}"/>
-
+</g:if>

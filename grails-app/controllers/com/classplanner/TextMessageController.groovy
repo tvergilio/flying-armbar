@@ -8,7 +8,7 @@ import static org.springframework.http.HttpStatus.*
 class TextMessageController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-    String linkName = "Messages"
+    String linkName = "Forum Messages"
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
@@ -56,7 +56,7 @@ class TextMessageController {
         }
 
         if (textMessageInstance.course == null) {
-            def course = Course.get(params.course_id)
+            def course = Course.get(params?.course_id)
             textMessageInstance.course = course
             textMessageInstance.validate()
         }
@@ -70,7 +70,7 @@ class TextMessageController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'textMessageInstance.label', default: 'TextMessage'), textMessageInstance.id])
+                flash.message = message(code: 'textMessage.created.message', args: [textMessageInstance.id])
                 redirect textMessageInstance
             }
             '*' { respond textMessageInstance, [status: CREATED] }
