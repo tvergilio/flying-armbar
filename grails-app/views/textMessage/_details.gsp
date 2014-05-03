@@ -1,13 +1,13 @@
-<div id="show-textMessage" class="content scaffold-show" role="main">
-<ol class="property-list textMessage">
-<g:if test="${textMessageInstance?.subject}">
-    <li class="fieldcontain">
-        <span id="subject-label" class="property-label"><g:message
-                code="textMessage.subject.label" default="Subject" /></span>
-        <span class="property-value" aria-labelledby="subject-label">
-            <g:fieldValue bean="${textMessageInstance}" field="subject"/></span>
-    </li>
-</g:if>
+<div id="show-testMessage" class="content scaffold-show" role="main">
+    <ol class="property-list testMessage">
+        <g:if test="${textMessageInstance?.subject}">
+            <li class="fieldcontain">
+                <span id="subject-label" class="property-label"><g:message
+                        code="textMessage.subject.label" default="Subject" /></span>
+                <span class="property-value" aria-labelledby="subject-label">
+                    <g:fieldValue bean="${textMessageInstance}" field="subject"/></span>
+            </li>
+        </g:if>
     <g:if test="${textMessageInstance?.content}">
         <li class="fieldcontain">
             <span id="content-label" class="property-label"><g:message
@@ -30,8 +30,8 @@
 </ol>
     <g:form>
         <fieldset class="buttons">
-            <g:link class="edit" action="create"
-                    params="${[id: textMessageInstance.id]}">Reply</g:link>
+            <g:link class="create" action="reply"
+                    resource="${textMessageInstance}">Reply</g:link>
         </fieldset>
     </g:form>
 </div>

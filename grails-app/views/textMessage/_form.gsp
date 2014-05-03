@@ -1,9 +1,6 @@
 <%@ page import="com.classplanner.TextMessage" %>
 
 <g:if test="${textMessageInstance?.parent}">
-    <input type="hidden" name="parent.id"
-           value="${textMessageInstance?.parent?.id}"/>
-
     <div class="fieldcontain ${hasErrors(bean: textMessageInstance,
             field: 'parent', 'error')} ">
         <label for="parent">
@@ -13,43 +10,25 @@
     </div>
 </g:if>
 
-<div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'subject', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: textMessageInstance,
+        field: 'subject', 'error')} required">
     <label for="subject">
-        <g:message code="textMessage.subject.label" default="Subject"/>
+        <g:message code="textMessage.subject.label" default="Subject" />
         <span class="required-indicator">*</span>
     </label>
-    <g:textField name="subject" class="messageField" required="" value="${textMessageInstance?.subject}"/>
-
+    <g:textField name="subject" class="messageField" required=""
+                 value="${textMessageInstance?.subject}"/>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'content', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: textMessageInstance,
+        field: 'content', 'error')} required">
     <label for="content">
-        <g:message code="textMessage.content.label" default="Content"/>
+        <g:message code="textMessage.content.label" default="Content" />
         <span class="required-indicator">*</span>
     </label>
-    <g:textArea name="content" cols="40" rows="5" maxlength="2000" class="messageField" required=""
-                value="${textMessageInstance?.content}"/>
-
+    <g:textArea name="content" class="messageField" cols="40" rows="5"
+                maxlength="2000" required="" value="${textMessageInstance?.content}"/>
 </div>
 
-%{--<div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'parent', 'error')} ">--}%
-    %{--<label for="parent">--}%
-        %{--<g:message code="textMessage.parent.label" default="Parent"/>--}%
-
-    %{--</label>--}%
-    %{--<g:select id="parent" name="parent.id" from="${com.classplanner.TextMessage.list()}" optionKey="id"--}%
-              %{--value="${textMessageInstance?.parent?.id}" class="many-to-one" noSelection="['null': '']"/>--}%
-
-%{--</div>--}%
-
-<div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'course', 'error')} required">
-    <label for="course">
-        <g:message code="textMessage.course.label" default="Course"/>
-        <span class="required-indicator">*</span>
-    </label>
-    <g:select id="course" name="course.id" from="${com.classplanner.Course.list()}" optionKey="id" required=""
-              value="${textMessageInstance?.course?.id}" class="many-to-one"/>
-</div>
 %{--<g:hiddenField name="course.id" value="${textMessageInstance?.course.id}"/>--}%
 
 <div class="fieldcontain ${hasErrors(bean: textMessageInstance, field: 'author', 'error')} required">
@@ -62,5 +41,10 @@
 
 </div>
 
-%{--<g:hiddenField name="course.id" value="${textMessageInstance?.course.id}"/>--}%
+<g:hiddenField name="course_id" value="${params.course_id}"/>
+%{--<g:if test="${textMessageInstance?.course?.id}">--}%
+    %{--<g:hiddenField name="course_id" value="${textMessageInstance?.course?.id}"/>--}%
+%{--</g:if>--}%
+<g:hiddenField name="parent" value="${textMessageInstance?.parent?.id}"/>
+<g:hiddenField name="course" value="${textMessageInstance?.parent?.course?.id}"/>
 

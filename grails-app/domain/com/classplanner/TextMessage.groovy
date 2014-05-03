@@ -18,6 +18,10 @@ class TextMessage {
     }
     static belongsTo = Course
 
+    static findAllChildren (TextMessage msg) {
+        return findAllWhere([parent: msg]);
+    }
+
     String toString() {
         "$subject, $author"
     }

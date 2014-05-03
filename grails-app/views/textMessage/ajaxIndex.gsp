@@ -24,11 +24,7 @@
 <div id="list-textMessage" class="content scaffold-list" role="main">
     <h1>${course?.subject} - Forum Messages</h1>
     <div id="messageList">
-        <g:each in="${textMessageInstanceList}" var="textMessageInstance">
-            <g:remoteLink action="showDetail" id="${textMessageInstance?.id}" update="details">
-                 <p>${textMessageInstance.author.fullName} - ${textMessageInstance.subject}</p>
-                 </g:remoteLink>
-        </g:each>
+        <g:messageThread messages="${textMessageInstanceList}" />
     </div>
     <h3>Message Details</h3>
     <div id="details">

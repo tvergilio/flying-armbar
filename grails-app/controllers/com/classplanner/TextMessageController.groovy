@@ -8,13 +8,13 @@ import static org.springframework.http.HttpStatus.*
 class TextMessageController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-    String linkName = "Text Messages"
+    String linkName = "Messages"
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         def list
         def count
-        def course = Course.get(params.id)
+        def course = Course.get(params.course_id)
         if (course) {
             list = TextMessage.findAllByCourse(course, params)
             count = TextMessage.countByCourse(course)
@@ -25,6 +25,7 @@ class TextMessageController {
         render view: 'ajaxIndex', model: [textMessageInstanceList : list,
                                           textMessageInstanceCount: count,
                                           course                  : course]
+
     }
 
     def show(TextMessage textMessageInstance) {
@@ -32,18 +33,19 @@ class TextMessageController {
     }
 
     def reply = {
-        def parent = TextMessage.get(params.get('id'))
-        def textMessageInstance
-        if (parent != null) {
-            textMessageInstance = new TextMessage(parent: parent, course: parent.course,
-                    subject: "RE: $parent.subject").save()
-
-            render view: 'create', model: ['textMessageInstance': textMessageInstance]
-        }
+        def parent = TextMessage.get(params.id)
+        def textMessageInstance = new TextMessage(parent:parent, course:parent.course,
+                subject:"RE: $parent.subject")
+        render view:'create', model:['textMessageInstance':textMessageInstance]
     }
 
     def create() {
-        respond new TextMessage(params)
+        if (params.course == null) {
+            params.course = Course.get(params.course_id)
+        }
+
+        TextMessage message = new TextMessage(params)
+        respond message
     }
 
     @Transactional
@@ -51,6 +53,12 @@ class TextMessageController {
         if (textMessageInstance == null) {
             notFound()
             return
+        }
+
+        if (textMessageInstance.course == null) {
+            def course = Course.get(params.course_id)
+            textMessageInstance.course = course
+            textMessageInstance.validate()
         }
 
         if (textMessageInstance.hasErrors()) {

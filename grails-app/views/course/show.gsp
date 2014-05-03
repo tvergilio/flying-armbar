@@ -130,7 +130,9 @@
 				<fieldset class="buttons">
 					<g:link class="edit" action="edit" resource="${courseInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
+                    <g:set var="msgEntityName" value="${message(code: 'textMessage.label', default: 'Forum Message')}"/>
+                    <g:link controller="textMessage" action="create" params= "${[course_id:courseInstance.id]}"><g:message code="default.new.label" args="[msgEntityName]"></g:message></g:link>
+                </fieldset>
 			</g:form>
 		</div>
 	</body>
