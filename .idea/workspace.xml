@@ -37,17 +37,17 @@
       <file leaf-file-name="BuildConfig.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.28" vertical-offset="1062" max-vertical-offset="1870">
-              <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+            <state vertical-scroll-proportion="-9.8" vertical-offset="1149" max-vertical-offset="1887">
+              <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DashboardController.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/classplanner/DashboardController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.130435" vertical-offset="0" max-vertical-offset="816">
+            <state vertical-scroll-proportion="0.39872068" vertical-offset="0" max-vertical-offset="816">
               <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
               <folding />
             </state>
@@ -64,10 +64,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_twitter.gsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_twitter.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/_twitter.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07674944" vertical-offset="0" max-vertical-offset="443">
+            <state vertical-scroll-proportion="-0.6938776" vertical-offset="0" max-vertical-offset="221">
               <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
               <folding />
             </state>
@@ -189,10 +189,10 @@
         <option value="$PROJECT_DIR$/grails-app/taglib/com/classplanner/ClassPlannerTagLib.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/course/show.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/classplanner/CourseController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/com/classplanner/DashboardController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/dashboard/_twitter.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/com/classplanner/DashboardController.groovy" />
       </list>
     </option>
   </component>
@@ -930,7 +930,7 @@
       <workItem from="1399204701202" duration="553000" />
       <workItem from="1410712571648" duration="5873000" />
       <workItem from="1412153796723" duration="5784000" />
-      <workItem from="1412165609697" duration="21540000" />
+      <workItem from="1412165609697" duration="23034000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1397403634911</created>
@@ -948,11 +948,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103003000" />
+    <option name="totallyTimeSpent" value="104497000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="7" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32992035" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -976,7 +976,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33887044" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3986711" sideWeight="0.69895834" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3986711" sideWeight="0.69895834" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -1381,14 +1381,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/grails-2.3.7/dist/grails-web-2.3.7-sources.jar!/org/codehaus/groovy/grails/web/taglib/GroovyPageTagBody.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="3519">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/grails-2.3.7/lib/org.springframework/spring-core/jars/spring-core-3.2.8.RELEASE-sources.jar!/org/springframework/util/Assert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1417" max-vertical-offset="6579">
@@ -1429,22 +1421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.28" vertical-offset="1062" max-vertical-offset="1870">
-          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/classplanner/DashboardController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.130435" vertical-offset="0" max-vertical-offset="816">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/dashboard.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.3061223" vertical-offset="322" max-vertical-offset="816">
@@ -1455,8 +1431,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/dashboard/_twitter.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07674944" vertical-offset="0" max-vertical-offset="443">
+        <state vertical-scroll-proportion="-0.6938776" vertical-offset="0" max-vertical-offset="221">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/grails-2.3.7/dist/grails-web-2.3.7-sources.jar!/org/codehaus/groovy/grails/web/taglib/GroovyPageTagBody.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="295" max-vertical-offset="3519">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.8" vertical-offset="1149" max-vertical-offset="1887">
+          <caret line="82" column="36" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/classplanner/DashboardController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39872068" vertical-offset="0" max-vertical-offset="816">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding />
         </state>
       </provider>
