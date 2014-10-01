@@ -15,6 +15,10 @@ class UserSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
+    void "test toString"() {
+        when: "a user has a fullName"
+        def user = new User (fullName: 'Donald Duck')
+        then: "the toString method will return the full name."
+        user.toString() == 'Donald Duck'
     }
 }

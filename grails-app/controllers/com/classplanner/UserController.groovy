@@ -1,9 +1,8 @@
 package com.classplanner
 
-
+import grails.transaction.Transactional
 
 import static org.springframework.http.HttpStatus.*
-import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
 class UserController {
@@ -13,7 +12,7 @@ class UserController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond User.list(params), model:[userInstanceCount: User.count()]
+        respond User.list(params), model: [userInstanceCount: User.count()]
     }
 
     def show(User userInstance) {
@@ -24,6 +23,30 @@ class UserController {
         respond new User(params)
     }
 
+    def login() {
+        if (params.cName)
+            return ['cName': params.cName, 'aName': params.aName]
+    }
+
+    def logout = {
+        session.user = null
+        redirect(uri:'/')
+    }
+
+    def validate() {
+        def user = User.findByUserName(params.username)
+        if (user && user.password == params.password) {
+            session.user = user
+            if (params.cName)
+                redirect controller:params.cName, action:params.aName
+            else
+                redirect controller:'course', action:'index'
+        } else {
+            flash.message = "Invalid username and password."
+            render view: 'login'
+        }
+    }
+
     @Transactional
     def save(User userInstance) {
         if (userInstance == null) {
@@ -32,11 +55,11 @@ class UserController {
         }
 
         if (userInstance.hasErrors()) {
-            respond userInstance.errors, view:'create'
+            respond userInstance.errors, view: 'create'
             return
         }
 
-        userInstance.save flush:true
+        userInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
@@ -59,18 +82,18 @@ class UserController {
         }
 
         if (userInstance.hasErrors()) {
-            respond userInstance.errors, view:'edit'
+            respond userInstance.errors, view: 'edit'
             return
         }
 
-        userInstance.save flush:true
+        userInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
                 redirect userInstance
             }
-            '*'{ respond userInstance, [status: OK] }
+            '*' { respond userInstance, [status: OK] }
         }
     }
 
@@ -82,14 +105,14 @@ class UserController {
             return
         }
 
-        userInstance.delete flush:true
+        userInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'User.label', default: 'User'), userInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -99,7 +122,8 @@ class UserController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'userInstance.label', default: 'User'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
+
 }
