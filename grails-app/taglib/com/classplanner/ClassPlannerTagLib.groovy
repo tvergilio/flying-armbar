@@ -33,4 +33,44 @@ class ClassPlannerTagLib {
         }
         out << "</div><br/>"
     }
+
+    def teacherCourses = {
+        if (request.getSession(false) && session.user){
+            def courses = Course.findAllByTeacher(session.user)
+            if (courses){
+                out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
+                out << "<h3>Courses you are teaching:</h3>"
+                out << "<ol>"
+                courses.each{
+                    out << "<li><a href='"
+                    out << "${createLink(controller:'course',action:'show',id:it.id)}'>"
+                    out << "${it}</a></li>"
+                }
+                out << "</ol>"
+                out << "</div>"
+            }
+        }
+    }
+
+    def studentCourses = {
+        if (request.getSession(false) && session.user){
+            def courses = Course.createCriteria().list{
+                students{
+                    eq('id', session.user?.id)
+                }
+            }
+            if (courses){
+                out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
+                out << "<h3>Courses you have enrolled for:</h3>"
+                out << "<ul>"
+                courses.unique().each(){
+                    out << "<li><a href='"
+                    out << "${createLink(controller:'course',action:'show',id:it.id)}'>"
+                    out << "${it}</a></li>"
+                }
+                out << "</ul>"
+                out << "</div>"
+            }
+        }
+    }
 }

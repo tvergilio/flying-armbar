@@ -7,7 +7,7 @@ class Course {
     User teacher
     String location
     static hasMany = [students : User, respondents: String, sponsorships: Sponsorship, tasks: Task, messages: TextMessage]
-
+    static searchable = true
     static constraints = {
         startDate()
         subject unique: true
@@ -22,4 +22,5 @@ class Course {
     String toString() {
         "$subject, $teacher"
     }
+
 }

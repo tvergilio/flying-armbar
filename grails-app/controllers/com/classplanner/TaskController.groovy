@@ -25,6 +25,10 @@ class TaskController {
         respond new Task(params)
     }
 
+    def static listForCourse (String courseId) {
+        return Task.list([course: courseId])
+    }
+
     @Transactional
     def save(Task taskInstance) {
         if (taskInstance == null) {

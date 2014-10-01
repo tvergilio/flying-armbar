@@ -1,5 +1,5 @@
 
-<%@ page import="com.classplanner.Task" %>
+<%@ page import="com.classplanner.Course; com.classplanner.Task" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,7 +37,7 @@
 					</tr>
 				</thead>
 				<tbody>
-				<g:each in="${taskInstanceList}" status="i" var="taskInstance">
+				<g:each in="${Course.findById(params.get('id')).tasks}" status="i" var="taskInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${taskInstance.id}">${fieldValue(bean: taskInstance, field: "title")}</g:link></td>
@@ -55,7 +55,7 @@
 				</tbody>
 			</table>
 			<div class="pagination">
-				<g:paginate total="${taskInstanceCount ?: 0}" />
+				<g:paginate total="${Course.findById(params.get('id')).tasks.size() ?: 0}" />
 			</div>
 		</div>
 	</body>

@@ -1,7 +1,5 @@
 <%@ page import="com.classplanner.User" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'fullName', 'error')} ">
 	<label for="fullName">
 		<g:message code="user.fullName.label" default="Full Name" />

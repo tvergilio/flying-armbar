@@ -103,4 +103,11 @@ class CourseController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    def search() {
+        if(!"null".equals(String.valueOf(params.query))){
+            def courses = Course.search(params.query).results
+            [courses : courses]
+        }
+    }
 }
