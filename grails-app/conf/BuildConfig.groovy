@@ -80,8 +80,8 @@ grails.project.dependency.resolution = {
         compile ":jquery-ui:1.8.24"
 
         //twitter
-//        compile ":twitter4j:0.3.2"
-        compile ":twitter4j:4.0.4.0"
+        //compile ":twitter4j:0.3.2"
+        //compile ":twitter:0.2"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.9" // or ":hibernate4:4.3.4"
