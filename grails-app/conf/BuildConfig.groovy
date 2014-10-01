@@ -76,6 +76,12 @@ grails.project.dependency.resolution = {
         //searchable plugin
         compile ":searchable:0.6.9"
 
+        //jquery ui
+        compile ":jquery-ui:1.8.24"
+
+        //twitter
+        compile ":twitter4j:0.3.2"
+
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.9" // or ":hibernate4:4.3.4"
         runtime ":database-migration:1.3.8"

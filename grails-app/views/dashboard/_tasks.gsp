@@ -7,16 +7,18 @@
         <th>Assigned To</th>
     </tr>
     </thead>
-    <g:each in="${tasks}" var="task">
-        <tr>
-            <td>${task.title}</td>
-            <td>
-                <g:formatDate format="dd/MMM/yyyy" date="${task.dueDate}" />
-            </td>
-            <td>
-                ${task.assignedTo}
-            </td>
-        </tr>
+    <g:each in="${course.tasks}" var="task">
+        <g:if test="${!task.completed}">
+            <tr>
+                <td>${task.title}</td>
+                <td>
+                    <g:formatDate format="dd/MMM/yyyy" date="${task.dueDate}"/>
+                </td>
+                <td>
+                    ${task.assignedTo}
+                </td>
+            </tr>
+        </g:if>
     </g:each>
 </table>
 <g:link controller="task" action="index" id="${course.id}">

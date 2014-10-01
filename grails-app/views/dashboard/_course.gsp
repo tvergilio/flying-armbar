@@ -17,7 +17,7 @@
             Location: ${course.location}
         </td>
         <td>
-            Number of potential students: ${course.respondents.size()}
+            Number of students enrolled: ${course.students.size()}
         </td>
     </tr>
 </table>

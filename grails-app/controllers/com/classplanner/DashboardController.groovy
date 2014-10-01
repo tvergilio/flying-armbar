@@ -4,6 +4,16 @@ class DashboardController {
 
     def index() { }
 
+    def twitter4jService
+
+    def tweet = {
+        def course = Course.get(params.id)
+        if (course){
+            twitter4jService.updateStatus(params.status)
+        }
+        redirect(action:dashboard, id:course.id)
+    }
+
     def dashboard = {
         def course = Course.get(params.id)
         if (course){

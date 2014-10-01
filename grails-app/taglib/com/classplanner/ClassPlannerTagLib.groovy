@@ -73,4 +73,17 @@ class ClassPlannerTagLib {
             }
         }
     }
+    def enrollButton = {attrs ->
+        if (request.getSession(false) && session.user){
+            def user = session.user.merge()
+            def course = Course.get(attrs.courseId)
+            if (course && !course.students.contains(user)){
+                out << "<span id='enrollSpan' class='menuButton'>"
+                out << "<button id='enrollButton' type='button'>"
+                out << "Enroll For This Course"
+                out << "</button>"
+                out << "</span>"
+            }
+        }
+    }
 }

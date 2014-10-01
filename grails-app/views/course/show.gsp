@@ -1,10 +1,12 @@
 
-<%@ page import="com.classplanner.Course" %>
+<%@ page import="javax.servlet.RequestDispatcher; com.classplanner.Course" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'course.label', default: 'Course')}" />
+        <g:javascript library="jquery" />
+        <r:require module="jquery-ui" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -15,6 +17,7 @@
 				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="list" controller="dashboard" action="dashboard" id="${courseInstance.id}"> Course Dashboard</g:link></li>
+                <li><g:enrollButton courseId="${courseInstance.id}" /></li>
 			</ul>
 		</div>
 		<div id="show-course" class="content scaffold-show" role="main">
@@ -136,5 +139,42 @@
                 </fieldset>
 			</g:form>
 		</div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#enrollDialog').hide();
+            $( "#enrollButton" ).click(function() {
+                $("#enrollDialog").dialog({
+                    resizable: false,
+                    height:180,
+                    width: 420,
+                    modal: false,
+                    buttons: {
+                        "Submit": function() {
+                            $.ajax({
+                                type: "post",
+                                dataType: "html",
+                                url: "${g.createLink(action:'enroll')}",
+                                async: false,
+                                data: $("#enrollForm").serialize(),
+                                success: function (response, status, xml) {
+                                    $("#enrollSpan").html(response);
+                                }
+                            });
+                            $(this).dialog("close");
+                        },
+                        Cancel: function() {
+                            $(this).dialog( "close" );
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <div id="enrollDialog" title="Student Enrollment for ${courseInstance.subject}">
+        <g:form name="enrollForm" action="enroll">
+            <g:hiddenField name="id" value="${courseInstance.id}" />
+            <p>Are you sure you would like to enroll for the ${courseInstance.subject} course?</p>
+        </g:form>
+    </div>
 	</body>
 </html>
