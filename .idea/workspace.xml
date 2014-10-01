@@ -47,16 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseSpec.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit/com/classplanner/CourseSpec.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="561">
-              <caret line="21" column="10" selection-start-line="17" selection-start-column="0" selection-end-line="25" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="UserController.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/classplanner/UserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
@@ -102,11 +92,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassPlannerTagLib.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ClassPlannerTagLib.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/taglib/com/classplanner/ClassPlannerTagLib.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.71747965" vertical-offset="38" max-vertical-offset="714">
+            <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="714">
               <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.26211452" vertical-offset="0" max-vertical-offset="454">
+              <caret line="7" column="274" selection-start-line="7" selection-start-column="274" selection-end-line="7" selection-end-column="274" />
               <folding />
             </state>
           </provider>
@@ -192,6 +192,7 @@
         <option value="$PROJECT_DIR$/grails-app/controllers/com/classplanner/UserController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
         <option value="$PROJECT_DIR$/grails-app/taglib/com/classplanner/ClassPlannerTagLib.groovy" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -798,7 +799,7 @@
       <workItem from="1399125662386" duration="16197000" />
       <workItem from="1399204701202" duration="553000" />
       <workItem from="1410712571648" duration="5873000" />
-      <workItem from="1412153796723" duration="4924000" />
+      <workItem from="1412153796723" duration="5218000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1397403634911</created>
@@ -816,7 +817,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80603000" />
+    <option name="totallyTimeSpent" value="80897000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -887,13 +888,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="9316" max-vertical-offset="51085">
-          <caret line="597" column="6" selection-start-line="597" selection-start-column="6" selection-end-line="597" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/sponsor/_form.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
@@ -1287,8 +1281,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/taglib/com/classplanner/ClassPlannerTagLib.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71747965" vertical-offset="38" max-vertical-offset="714">
+        <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="714">
           <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26211452" vertical-offset="0" max-vertical-offset="454">
+          <caret line="7" column="274" selection-start-line="7" selection-start-column="274" selection-end-line="7" selection-end-column="274" />
           <folding />
         </state>
       </provider>
