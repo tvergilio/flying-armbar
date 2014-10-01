@@ -2,120 +2,35 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
-		<style type="text/css" media="screen">
-			#status {
-				background-color: #eee;
-				border: .2em solid #fff;
-				margin: 2em 2em 1em;
-				padding: 1em;
-				width: 12em;
-				float: left;
-				-moz-box-shadow: 0px 0px 1.25em #ccc;
-				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
-				-moz-border-radius: 0.6em;
-				-webkit-border-radius: 0.6em;
-				border-radius: 0.6em;
-			}
-
-			.ie6 #status {
-				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
-			}
-
-			#status ul {
-				font-size: 0.9em;
-				list-style-type: none;
-				margin-bottom: 0.6em;
-				padding: 0;
-			}
-
-			#status li {
-				line-height: 1.3;
-			}
-
-			#status h1 {
-				text-transform: uppercase;
-				font-size: 1.1em;
-				margin: 0 0 0.3em;
-			}
-
-			#page-body {
-				margin: 2em 1em 1.25em 18em;
-			}
-
-			h2 {
-				margin-top: 1em;
-				margin-bottom: 0.3em;
-				font-size: 1em;
-			}
-
-			p {
-				line-height: 1.5;
-				margin: 0.25em 0;
-			}
-
-			#controller-list ul {
-				list-style-position: inside;
-			}
-
-			#controller-list li {
-				line-height: 1.3;
-				list-style-position: inside;
-				margin: 0.25em 0;
-			}
-
-			@media screen and (max-width: 480px) {
-				#status {
-					display: none;
-				}
-
-				#page-body {
-					margin: 0 1em 1em;
-				}
-
-				#page-body h1 {
-					margin-top: 0;
-				}
-			}
-		</style>
+		<title>Welcome to Course Planner</title>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to the Course Planner</h1>
-			<p>This is a course planning application which will help you organise academic courses and keep track of lecturers and Student enrollment.</p>
-
-			<div id="controller-list" role="navigation">
-				<h2>Navigate to:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.getPropertyValue('linkName') } }">
-                        <g:if test="${c.getPropertyValue('linkName') != null}">
-                            <li class="controller"><g:link controller="${c.logicalPropertyName}">${c.getPropertyValue('linkName')}</g:link></li>
-                        </g:if>
-					</g:each>
-				</ul>
-			</div>
-		</div>
-	</body>
+    <div id="welcome">
+        <br />
+        <h3>Welcome to Course Planner</h3>
+        <p>This is a course planning application which will help us organise academic courses and keep track of lecturers and student interest.</p>
+    </div>
+    <div class="homeCell">
+        <h3>Find a Course</h3>
+        <p> If you are a student, you can see a list of courses here. If there is a course that you would be interested in attending, you can let the organisers know by registering your interest.</p>
+        <span class="buttons" >
+            <g:link controller="course" action="index">Find a Course</g:link>
+        </span>
+    </div>
+    <div class="homeCell">
+        <h3>Organize a Course</h3>
+        <p>If you are a lecturer and you would like to organise a new course, you can register your project here. Once your course has gathered enough student interest, you can apply for departmental approval with the department of your choice.</p>
+        <span class="buttons" >
+            <g:link controller="course" action="create"> Organize a Course</g:link>
+        </span>
+    </div>
+    <div class="homeCell">
+        <h3>Sponsor a Course</h3>
+        <p>If your business or organisation would like to get involved in education in our local community, then sponsoring an academic course can be a great way to
+        let everyone know that you're there.</p>
+        <span class="buttons" >
+            <g:link controller="sponsor" action="create">Sponsor a Course</g:link>
+        </span>
+    </div>
+    </body>
 </html>
