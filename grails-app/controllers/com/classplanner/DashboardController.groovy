@@ -25,7 +25,7 @@ class DashboardController {
             }
         }
         else{
-            flash.message = "No course was found with an id of ${params.id}"
+            //flash.message = "No course was found with an id of ${params.id}"
             redirect controller:'Course', action:'index'
         }
     }
