@@ -82,6 +82,10 @@ grails.project.dependency.resolution = {
         //mail service
         compile ":mail:1.0.7"
 
+        //captcha plugin
+        compile ":simple-captcha:1.0.0"
+
+
         //twitter
         //compile ":twitter4j:0.3.2"
         //compile ":twitter:0.2"
