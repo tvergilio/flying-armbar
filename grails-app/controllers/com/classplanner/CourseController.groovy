@@ -110,10 +110,10 @@ class CourseController {
             [courses : courses]
         }
     }
-    def enroll = {
+    def enrol = {
         def course = Course.get(params.id)
         course.addToStudents(session.user)
         course.save()
-        render "Thank you for enrolling!"
+        render "Thank you for enroling!"
     }
 }

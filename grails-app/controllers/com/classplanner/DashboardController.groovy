@@ -28,7 +28,7 @@ class DashboardController {
         }
     }
 
-    def enrollStudents() {
+    def enrolStudents() {
         def course = Course.get(params.course.id)
         def notIn = new ArrayList<String>()
         notIn.add(course.teacher?.fullName)
@@ -37,11 +37,11 @@ class DashboardController {
         }
         def allUsers = User.findAllByFullNameNotInList(notIn)
         if (course && allUsers) {
-            return [course: course, allUsers: allUsers, enrolled: course.students]
+            return [course: course, allUsers: allUsers, enroled: course.students]
         }
     }
 
-    def enroll() {
+    def enrol() {
         def course = Course.get(params.courseid);
         course.refresh()
         def student = params.get('student');

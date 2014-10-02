@@ -69,7 +69,7 @@ class ClassPlannerTagLib {
             }
             if (courses){
                 out << "<div style='margin-left:25px; margin-top:25px; width:85%'>"
-                out << "<h3>Courses you have enrolled for:</h3>"
+                out << "<h3>Courses you have enroled for:</h3>"
                 out << "<ul>"
                 courses.unique().each(){
                     out << "<li><a href='"
@@ -81,14 +81,14 @@ class ClassPlannerTagLib {
             }
         }
     }
-    def enrollButton = {attrs ->
+    def enrolButton = {attrs ->
         if (request.getSession(false) && session.user){
             def user = session.user.merge()
             def course = Course.get(attrs.courseId)
             if (course && !course.students.contains(user) && course.teacher.userName != session.user.userName){
-                out << "<span id='enrollSpan' class='menuButton'>"
-                out << "<button id='enrollButton' type='button'>"
-                out << "Enroll For This Course"
+                out << "<span id='enrolSpan' class='menuButton'>"
+                out << "<button id='enrolButton' type='button'>"
+                out << "Enrol For This Course"
                 out << "</button>"
                 out << "</span>"
             }

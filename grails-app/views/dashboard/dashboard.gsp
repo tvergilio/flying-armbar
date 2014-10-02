@@ -17,7 +17,7 @@
     <ul>
         <li><a class="home" href="${createLink(uri: '/')}">Home</a></li>
         <li><g:link class="create" controller="task" action="create">Create Task</g:link></li>
-        <li><g:link controller="dashboard" action="enrollStudents" params="['course.id': params.get('id')]">Enroll Students</g:link></li>
+        <li><g:link controller="dashboard" action="enrolStudents" params="['course.id': params.get('id')]">Enrol Students</g:link></li>
         <li><g:link class="list" controller="sponsor" action="index"> All Sponsors</g:link></li>
         <g:contactUs />
     </ul>

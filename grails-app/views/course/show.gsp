@@ -17,7 +17,7 @@
 				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
                 <li><g:link class="list" controller="dashboard" action="dashboard" id="${courseInstance.id}"> Course Dashboard</g:link></li>
-                <li><g:enrollButton courseId="${courseInstance.id}" /></li>
+                <li><g:enrolButton courseId="${courseInstance.id}" /></li>
 			</ul>
 		</div>
 		<div id="show-course" class="content scaffold-show" role="main">
@@ -141,9 +141,9 @@
 		</div>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#enrollDialog').hide();
-            $( "#enrollButton" ).click(function() {
-                $("#enrollDialog").dialog({
+            $('#enrolDialog').hide();
+            $( "#enrolButton" ).click(function() {
+                $("#enrolDialog").dialog({
                     resizable: false,
                     height:180,
                     width: 420,
@@ -153,11 +153,11 @@
                             $.ajax({
                                 type: "post",
                                 dataType: "html",
-                                url: "${g.createLink(action:'enroll')}",
+                                url: "${g.createLink(action:'enrol')}",
                                 async: false,
-                                data: $("#enrollForm").serialize(),
+                                data: $("#enrolForm").serialize(),
                                 success: function (response, status, xml) {
-                                    $("#enrollSpan").html(response);
+                                    $("#enrolSpan").html(response);
                                 }
                             });
                             $(this).dialog("close");
@@ -170,10 +170,10 @@
             });
         });
     </script>
-    <div id="enrollDialog" title="Student Enrollment for ${courseInstance.subject}">
-        <g:form name="enrollForm" action="enroll">
+    <div id="enrolDialog" title="Student enrolment for ${courseInstance.subject}">
+        <g:form name="enrolForm" action="enrol">
             <g:hiddenField name="id" value="${courseInstance.id}" />
-            <p>Are you sure you would like to enroll for the ${courseInstance.subject} course?</p>
+            <p>Are you sure you would like to enrol for the ${courseInstance.subject} course?</p>
         </g:form>
     </div>
 	</body>

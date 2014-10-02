@@ -20,14 +20,14 @@
                                                                                 args=" "/></g:link></li>
     </ul>
 </div>
-<g:form controller="dashboard" action="enroll">
+<g:form controller="dashboard" action="enrol">
 %{--<table>--}%
 %{--<thead>--}%
 %{--<tr>--}%
 %{--<g:sortableColumn property="fullName"--}%
 %{--title="${message(code: 'user.fullName.label', default: 'Full Name')}"/>--}%
 %{--<g:sortableColumn property="bio" title="${message(code: 'user.bio.label', default: 'Bio')}"/>--}%
-%{--<g:sortableColumn property="enroll" title="Enroll"/>--}%
+%{--<g:sortableColumn property="enrol" title="Enrol"/>--}%
 %{--</tr>--}%
 %{--</thead>--}%
 %{--<tbody>--}%
@@ -35,7 +35,7 @@
 %{--<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">--}%
 %{--<td>${fieldValue(bean: userInstance, field: "fullName")}</td>--}%
 %{--<td>${fieldValue(bean: userInstance, field: "bio")}</td>--}%
-%{--<td><g:checkBox id="enrollchk" name="enroll" value="${enrolled.contains(userInstance)}"/></td>--}%
+%{--<td><g:checkBox id="enrolchk" name="enrol" value="${enrolled.contains(userInstance)}"/></td>--}%
 %{--</tr>--}%
 %{--</g:each>--}%
 %{--</tbody>--}%
@@ -46,7 +46,7 @@
                       from="${allUsers}"
                       value="${students}"
                       optionKey="id"/>
-            <input type="submit" value="Enroll" style="float: right"/>
+            <input type="submit" value="Enrol" style="float: right"/>
             <input type="hidden" name='courseid' value="${params.course.id}"/>
         </div>
     </g:if>
