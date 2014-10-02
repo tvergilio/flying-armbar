@@ -79,6 +79,9 @@ grails.project.dependency.resolution = {
         //jquery ui
         compile ":jquery-ui:1.8.24"
 
+        //mail service
+        compile ":mail:1.0.7"
+
         //twitter
         //compile ":twitter4j:0.3.2"
         //compile ":twitter:0.2"

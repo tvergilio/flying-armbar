@@ -19,6 +19,7 @@
         <li><g:link class="create" controller="task" action="create">Create Task</g:link></li>
         <li><g:link controller="user" action="create" params="['course.id': params.get('id')]">Add Student</g:link></li>
         <li><g:link class="list" controller="sponsor" action="index"> All Sponsors</g:link></li>
+        <g:contactUs />
     </ul>
 </div>
 <div id="course" style='margin:10px 10px 10px 10px'>

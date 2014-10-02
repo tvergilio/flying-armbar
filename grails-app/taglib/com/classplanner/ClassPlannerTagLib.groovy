@@ -34,6 +34,14 @@ class ClassPlannerTagLib {
         out << "</div><br/>"
     }
 
+    def contactUs = {
+        if (request.getSession(false) && session.user){
+            out << "<span style='float:right;margin-right:15px'>"
+            out << "<a href='${createLink(controller:'Send', action:'mailForm')}'>"
+            out << "Contact Us </a></span>"
+        }
+    }
+
     def teacherCourses = {
         if (request.getSession(false) && session.user){
             def courses = Course.findAllByTeacher(session.user)
