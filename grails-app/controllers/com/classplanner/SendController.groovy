@@ -14,7 +14,8 @@ class SendController {
                 subject "Message from: ${request.getParameter('name')} - ${request.getParameter('subject')}"
                 body request.getParameter('body') ?: grailsApplication.config.grails.mail.default.body
             }
-            render "Thank you, your e-mail has been sent to our dev team."
+            flash.message = message(code: 'email.success.message', args:['Thank you', null])
+            redirect(uri: '/')
         } else {
             //captcha entered is wrong, preserve values entered and get another captcha
             flash.message = message(code: 'captcha.error.message', args:['Please re-enter the captcha', null])

@@ -51,7 +51,7 @@ class ClassPlannerTagLib {
                 out << "<ol>"
                 courses.each{
                     out << "<li><a href='"
-                    out << "${createLink(controller:'course',action:'show',id:it.id)}'>"
+                    out << "${createLink(controller:'dashboard',action:'dashboard',id:it.id)}'>"
                     out << "${it}</a></li>"
                 }
                 out << "</ol>"
@@ -73,7 +73,7 @@ class ClassPlannerTagLib {
                 out << "<ul>"
                 courses.unique().each(){
                     out << "<li><a href='"
-                    out << "${createLink(controller:'course',action:'show',id:it.id)}'>"
+                    out << "${createLink(controller:'dashboard',action:'dashboard',id:it.id)}'>"
                     out << "${it}</a></li>"
                 }
                 out << "</ul>"

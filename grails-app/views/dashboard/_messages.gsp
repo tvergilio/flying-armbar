@@ -1,3 +1,4 @@
+<g:if test="${messages}">
 <h3>Forum Messages</h3>
 <table>
 <thead>
@@ -24,6 +25,8 @@
     </tr>
 </g:each>
 </table>
+
 <g:link controller="textMessage" action="index" id="${course.id}">
     View threaded messages for this event.
 </g:link>
+</g:if>

@@ -34,7 +34,7 @@ class UserController {
     }
 
     def validate() {
-        def user = User.findByUserName(params.username)
+        def user = User.findByUserNameIlike(params.username)
         if (user && user.password == params.password) {
             session.user = user
             if (params.cName)

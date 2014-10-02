@@ -1,3 +1,4 @@
+<g:if test="${sponsorships}">
 <h3>Sponsors</h3>
 <table>
     <thead>
@@ -25,3 +26,4 @@
         </tr>
     </g:each>
 </table>
+</g:if>

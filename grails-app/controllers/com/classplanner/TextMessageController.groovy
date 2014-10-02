@@ -14,7 +14,7 @@ class TextMessageController {
         params.max = Math.min(max ?: 10, 100)
         def list
         def count
-        def course = Course.get(params.course_id)
+        def course = Course.get(params.id)
         if (course) {
             list = TextMessage.findAllByCourse(course, params)
             count = TextMessage.countByCourse(course)
